@@ -62,7 +62,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *slockcmd[] = { "slock", NULL };
 static const char *roficmd[] = { "rofi", "-show", "combi", "-combi-modes" , "window,drun,run,ssh", "-modes", "combi", NULL};
-static const char *flameshotcmd[] = { "flameshotcmd", "gui", NULL };
+static const char *flameshotcmd[] = { "flameshot", "gui", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
