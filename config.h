@@ -62,7 +62,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *slockcmd[] = { "slock", NULL };
 static const char *roficmd[] = { "rofi", "-show", "combi", "-combi-modes" , "window,drun,run,ssh", "-modes", "combi", NULL};
-static const char *frameshotcmd[] = { "frameshotcmd", "gui", NULL };
+static const char *flameshotcmd[] = { "flameshotcmd", "gui", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -70,7 +70,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = roficmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_l,      spawn,          {.v = slockcmd } },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = frameshotcmd } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = flameshotcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ Mod1Mask,                     XK_j,      focusstack,     {.i = +1 } },
 	{ Mod1Mask,                     XK_k,      focusstack,     {.i = -1 } },
