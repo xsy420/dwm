@@ -63,6 +63,8 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *slockcmd[] = { "slock", NULL };
 static const char *roficmd[] = { "rofi", "-show", "combi", "-combi-modes" , "window,drun,run,ssh", "-modes", "combi", NULL};
 static const char *flameshotcmd[] = { "flameshot", "gui", NULL };
+static const char *rangercmd[] = { "st", "-e", "ranger", NULL };
+static const char *edgecmd[] = { "microsoft-edge-dev", "--inprivate", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -71,6 +73,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_l,      spawn,          {.v = slockcmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = flameshotcmd } },
+	{ MODKEY,                       XK_r,      spawn,          {.v = rangercmd } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = edgecmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ Mod1Mask,                     XK_j,      focusstack,     {.i = +1 } },
 	{ Mod1Mask,                     XK_k,      focusstack,     {.i = -1 } },
