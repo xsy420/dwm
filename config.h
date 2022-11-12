@@ -1,3 +1,4 @@
+#include <X11/XF86keysym.h>
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
@@ -65,6 +66,20 @@ static const char *roficmd[] = { "rofi", "-show", "combi", "-combi-modes" , "win
 static const char *flameshotcmd[] = { "flameshot", "gui", NULL };
 static const char *rangercmd[] = { "st", "-e", "ranger", NULL };
 static const char *edgecmd[] = { "microsoft-edge-dev", "--inprivate", NULL };
+static const char *ideacmd[] = { "idea", NULL };
+static const char *webstormcmd[] = { "webstorm", NULL };
+static const char *pycharmcmd[] = { "pycharm", NULL };
+static const char *btopcmd[] = { "st", "-e", "btop", NULL };
+static const char *navicatcmd[] = { "Navicat", NULL };
+static const char *feishucmd[] = { "feishu", NULL };
+static const char *vlccmd[] = { "vlc", NULL };
+static const char *rebootcmd[] = { "reboot", NULL };
+static const char *codecmd[] = { "code", NULL };
+static const char *volupcmd[] = { "amixer", "-D", "pulse", "sset", "Master", "5%+", NULL };
+static const char *voldowncmd[] = { "amixer", "-D", "pulse", "sset", "Master", "5%-", NULL };
+static const char *volmutecmd[] = { "amixer", "set", "Master", "toggle", NULL };
+static const char *brightupcmd[] = { "sudo", "light", "-A", "5", NULL };
+static const char *brightdowncmd[] = { "sudo", "light", "-U", "5", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -75,6 +90,20 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = flameshotcmd } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = rangercmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = edgecmd } },
+	{ MODKEY|ShiftMask,             XK_i,      spawn,          {.v = ideacmd } },
+	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = webstormcmd } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = pycharmcmd } },
+	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = btopcmd } },
+	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = navicatcmd } },
+	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = feishucmd } },
+	{ MODKEY|ShiftMask,             XK_v,      spawn,          {.v = vlccmd } },
+	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = rebootcmd } },
+	{ MODKEY|ShiftMask,             XK_c,      spawn,          {.v = codecmd } },
+  { 0,              XF86XK_AudioLowerVolume, spawn,          {.v = voldowncmd } },
+	{ 0,              XF86XK_AudioMute,        spawn,          {.v = volmutecmd } },
+	{ 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = volupcmd   } },
+	{ 0,              XF86XK_MonBrightnessUp,  spawn,          {.v = brightupcmd   } },
+	{ 0,              XF86XK_MonBrightnessDown,spawn,          {.v = brightdowncmd   } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ Mod1Mask,                     XK_j,      focusstack,     {.i = +1 } },
 	{ Mod1Mask,                     XK_k,      focusstack,     {.i = -1 } },
